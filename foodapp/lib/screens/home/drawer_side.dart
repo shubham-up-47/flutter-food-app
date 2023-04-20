@@ -7,6 +7,7 @@
 // import 'package:app/screens/wishList/wish_list.dart';
 import 'package:flutter/material.dart';
 import 'package:foodapp/screens/home/home_screen.dart';
+import 'package:foodapp/screens/my_profile/my_profile.dart';
 
 class DrawerSide extends StatefulWidget{
   // UserProvider userProvider;
@@ -104,7 +105,7 @@ class _DrawerSideState extends State<DrawerSide>{
               onTap: (){
                 Navigator.of(context).push( 
                   MaterialPageRoute(
-                    builder: (context) => HomeScreen(),
+                    builder: (context) => MyProfile(),
                   ),
                 );
               }

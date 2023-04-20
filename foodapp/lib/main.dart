@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:foodapp/config/colors.dart';
 import 'auth/sign_in.dart';
 
 void main() async {
@@ -16,6 +17,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: ThemeData(
+        primaryColor: primaryColor,
+        scaffoldBackgroundColor: scaffoldBackgroundColor
+      ),
       debugShowCheckedModeBanner: false,
       home: SignIn(),
     );

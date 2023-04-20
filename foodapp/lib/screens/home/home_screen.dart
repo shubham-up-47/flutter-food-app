@@ -1,5 +1,6 @@
 // import 'package:foodapp/models/review_cart_model.dart';
 import 'package:flutter/material.dart';
+import 'package:foodapp/config/colors.dart';
 import 'package:foodapp/screens/home/drawer_side.dart';
 // import 'package:foodapp/config/colors.dart';
 // import 'package:app/providers/product_provider.dart';
@@ -152,7 +153,7 @@ class _HomeScreenState extends State<HomeScreen>{
                   // Navigator.of(context).push(
                   //   MaterialPageRoute(
                   //     builder: (context) => Search(
-                  //       // search: productProvider.getRootProductDataList,
+                  //       search: productProvider.getRootProductDataList,
                   //     ),
                   //   ),
                   // );
@@ -229,22 +230,21 @@ class _HomeScreenState extends State<HomeScreen>{
         actions: [
           CircleAvatar(
             radius: 15,
-            backgroundColor: Color(0xffd6d382),
-            child: Icon(Icons.search, size:17, color:Colors.black),
-        //     child: IconButton(
-        //       onPressed: (){
+            backgroundColor: Color(0xffd6d382), 
+            child: IconButton(
+              onPressed: (){
         //         // Navigator.of(context).push(
         //         //   // MaterialPageRoute(
         //         //   //   // builder: (context) => Search(search: productProvider.gerAllProductSearch),
         //         //   // ),
         //         // );
-        //       }, 
-        //       icon: Icon(
-        //         Icons.search, 
-        //         size: 17, 
-        //         color: textColor
-        //       ),
-        //     ),
+              }, 
+              icon: Icon(
+                Icons.search, 
+                size: 17, 
+                color: Colors.black
+              ),
+            ),
           ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 5),
@@ -259,12 +259,11 @@ class _HomeScreenState extends State<HomeScreen>{
               child: CircleAvatar(
                 backgroundColor: Color(0xffd6d382),
                 radius: 15,
-                child: Icon(Icons.shop, size:17, color:Colors.black),
-        //         child: Icon(
-        //           Icons.shop,
-        //           size: 17,
-        //           color: textColor,
-        //         ),
+                child: Icon(
+                  Icons.shop,
+                  size: 17,
+                  color: textColor,
+                ),
               ),
             // ),
           ), 
