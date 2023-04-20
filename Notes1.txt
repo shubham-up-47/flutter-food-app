@@ -1,0 +1,65 @@
+*Tech terms used
+- Dart
+- Flutter
+- Firebase
+- Cross Platform App
+
+
+
+*To create a flutter project,
+- open target folder in VS code
+- run command 'flutter create ProjectName'
+
+*To run a flutter project,
+- go to project folder in VS code
+- run command 'flutter run'
+
+
+
+*After running app, click 'r' for refreshing app
+*If flutter page is not rendering, then wait for sometime or inspect error of page in browser
+*{FlatButton,RaisedButton,OutlineButton} are replaced by {TextButton,ElevatedButton,OutlinedButton}
+
+
+
+*To inspect error by a page,
+- right click on that page
+- select inspect & read console
+- search error on google
+
+
+
+
+*Storing images in assets folder
+*Get google-apple button for auth(signin+signup)
+
+
+
+         SigninSignup page
+
+*If we are making ui only -> use StatelessWidget
+*If we are implementing functionality also -> use StatefulWidget
+*Container will come black by default
+*Give Scaffold outside container to give background color (default color of Scaffold is white)
+*Image can be added in container only using decoration attribute
+*Use MainAxis for verticalAlignment & CrossAxis for horizontalAlignment
+*We can take child in Container & children in Column
+*We can make Alignment.spaceEvenly to evenly divide the space
+
+
+          Authentication
+
+
+
+
+
+*Incomplete videos,
+- storing loginData in firebase (Video:3, file:'sign_in')
+- correct shape of loginButton (Video:6, file:'home_screen')
+- Video:7
+- (Video:8, file:'product_overview')
+- (Video:9, file:'home_screen')
+- (Video:10, file:'my_profile')
+ 
+
+

@@ -1,0 +1,65 @@
+*To run the flutter project,
+- open target directory in VS code
+- run command 'flutter run -v'
+
+
+(setup WebApp in firebase & flutterProject to run firebase authentication project on chrome,edge)
+
+
+*Tech terms used
+- Flutter
+- Firebase
+- Cross Platform App
+
+*To create a new flutter project,
+- open target directory in VS code
+- run command 'flutter create ProjectName'
+
+*{FlatButton,RaisedButton,OutlineButton} are replaced by {TextButton,ElevatedButton,OutlinedButton}
+
+*To inspect error by a page,
+- right click on that page
+- select inspect & read console
+- search error on google
+
+ 
+
+
+*Incomplete videos,
+- storing loginData in firebase (Video:3, file:'sign_in')
+- correct shape of loginButton (Video:6, file:'home_screen')
+- Video:7
+- (Video:8, file:'product_overview')
+- (Video:9, file:'home_screen')
+- (Video:10, file:'my_profile')
+ 
+
+
+*Getting SHA-1 key of flutter app,
+- go to project directory 
+- open terminal
+- run 'cd android'
+- run '.\gradlew signingReport'
+
+
+*to handle exception in app/build.gradle,
+-   defaultConfig { 
+        minSdkVersion 16
+        targetSdkVersion 30
+    }
+- update GradleException() to FileNotFoundException()
+
+
+
+*To install missing libraries of you flutter project,
+- run 'flutter pub get'     
+
+*To update your dependencies their next major versions,
+- flutter pub upgrade --major-versions
+
+
+*Run this command to update the iOS project's pods
+- cd ios && pod deintegrate
+- cd ios && rm -f Podfile.lock
+- flutter packages get
+- cd ios && pod install --repo-update
