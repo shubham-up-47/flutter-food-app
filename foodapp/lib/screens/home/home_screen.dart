@@ -1,5 +1,6 @@
 // import 'package:foodapp/models/review_cart_model.dart';
 import 'package:flutter/material.dart';
+import 'package:foodapp/screens/home/drawer_side.dart';
 // import 'package:foodapp/config/colors.dart';
 // import 'package:app/providers/product_provider.dart';
 // import 'package:app/providers/user_provider.dart';
@@ -212,23 +213,24 @@ class _HomeScreenState extends State<HomeScreen>{
     // userProvider.getUserData();
 
     return Scaffold( 
-      // drawer: DrawerSide( 
-      //   // userProvider: userProvider,
-      // ),
+      drawer: DrawerSide( 
+        // userProvider: userProvider,
+      ),
 
       appBar: AppBar(
-        // iconTheme: IconThemeData(color: textColor),
-        // title: Text(
-        //   'Home',
-        //   style: TextStyle(
-        //     color: textColor,
-        //     fontSize: 17
-        //   ),
+        iconTheme: IconThemeData(color: Colors.black),
+        title: Text(
+          'Home',
+          style: TextStyle(
+            color: Colors.black,
+            fontSize: 17
+          ),
         ),
-        // actions: [
-        //   CircleAvatar(
-        //     radius: 15,
-        //     backgroundColor: Color(0xffd6d382),
+        actions: [
+          CircleAvatar(
+            radius: 15,
+            backgroundColor: Color(0xffd6d382),
+            child: Icon(Icons.search, size:17, color:Colors.black),
         //     child: IconButton(
         //       onPressed: (){
         //         // Navigator.of(context).push(
@@ -243,9 +245,9 @@ class _HomeScreenState extends State<HomeScreen>{
         //         color: textColor
         //       ),
         //     ),
-        //   ),
-        //   Padding(
-        //     padding: const EdgeInsets.symmetric(horizontal: 5),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 5),
         //     child: GestureDetector(
         //       onTap: (){
         //         Navigator.of(context).push(
@@ -254,20 +256,22 @@ class _HomeScreenState extends State<HomeScreen>{
         //           ),
         //         );
         //       },
-        //       child: CircleAvatar(
-        //         backgroundColor: Color(0xffd6d382),
-        //         radius: 15,
+              child: CircleAvatar(
+                backgroundColor: Color(0xffd6d382),
+                radius: 15,
+                child: Icon(Icons.shop, size:17, color:Colors.black),
         //         child: Icon(
         //           Icons.shop,
         //           size: 17,
         //           color: textColor,
         //         ),
-        //       ),
-        //     ),
-        //   ), 
-        // ],
-      // ), 
-    
+              ),
+            // ),
+          ), 
+        ],
+        backgroundColor: Color(0xffd6b738),
+      ),
+     
       body: Padding(
         padding: const EdgeInsets.symmetric(vertical:10, horizontal:10),
         child: ListView(

@@ -53,8 +53,7 @@
 
 
 
-*Incomplete videos,
-- storing loginData in firebase (Video:3, file:'sign_in')
+*Incomplete videos, (4 onwards)
 - correct shape of loginButton (Video:6, file:'home_screen')
 - Video:7
 - (Video:8, file:'product_overview')
