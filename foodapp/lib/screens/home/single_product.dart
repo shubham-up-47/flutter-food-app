@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-// import 'package:app/config/colors.dart';
-// import 'package:app/models/product_model.dart';
-// import 'package:app/widgets/count.dart';
-// import 'package:app/widgets/product_unit.dart';
+import 'package:foodapp/models/product_model.dart';
+import 'package:foodapp/config/colors.dart'; 
+import 'package:foodapp/widgets/count.dart';
+import 'package:foodapp/widgets/product_unit.dart'; 
 
 class SingalProduct extends StatefulWidget{
   final String productImage;
@@ -10,16 +10,16 @@ class SingalProduct extends StatefulWidget{
   final int productPrice;
   final Function() onTap;
   final String productId;
-  // final ProductModel productUnit;
+  final ProductModel productUnit;
 
   SingalProduct(
     {
       required this.productId,
       required this.productImage,
       required this.productName,
-      // this.productUnit,
+      required this.productUnit,
       required this.onTap,
-      required this.productPrice
+      required this.productPrice 
     }
   );
 
@@ -32,12 +32,12 @@ class _SingalProductState extends State<SingalProduct>{
   var firstValue;
   @override 
   Widget build(BuildContext context){
-    // widget.productUnit.productUnit.firstWhere((element) {
-    //   setState(() {
-    //     firstValue = element;
-    //   });
-    //   return true;
-    // });
+    widget.productUnit.productUnit.firstWhere((element) {
+      setState(() {
+        firstValue = element;
+      });
+      return true;
+    });
     return SingleChildScrollView(
       scrollDirection: Axis.horizontal,
       child: Row(
@@ -74,7 +74,7 @@ class _SingalProductState extends State<SingalProduct>{
                         Text(
                           widget.productName,
                           style: TextStyle(
-                            color: Colors.black,
+                            color: textColor,
                             fontWeight: FontWeight.bold
                           ),
                         ),
@@ -87,54 +87,54 @@ class _SingalProductState extends State<SingalProduct>{
                         SizedBox(height: 5),
                         Row(
                           children: [
-                            // Expanded(
-                            //   child: ProductUnit(
-                            //     onTop: (){
-                            //       showModalBottomSheet(
-                            //         context: context, 
-                            //         builder: (context){
-                            //           return Column(
-                            //             mainAxisAlignment: MainAxisAlignment.min,
-                            //             crossAxisAlignment: CrossAxisAlignment.start,
-                            //             children: widget.productUnit.productUnit.map<Widget>((data) {
-                            //               return Column(
-                            //                 children: [
-                            //                   Padding(
-                            //                     padding: const EdgeInsets.symmetric(vertical:10, horizontal:10),
-                            //                     child: InkWell(
-                            //                       onTap: () async{
-                            //                         setState(() {
-                            //                           unitData = data;
-                            //                         });
-                            //                         Navigator.of(context).pop(); 
-                            //                       },
-                            //                       child: Text(
-                            //                         data,
-                            //                         style: TextStyle(
-                            //                           color: primaryColor,
-                            //                           fontSize: 18
-                            //                         ),
-                            //                       ),
-                            //                     ),
-                            //                   ),
-                            //                 ],
-                            //               );
-                            //             }).toList(),
-                            //           );
-                            //         }
-                            //       );
-                            //     },
-                            //     title: unitData == null ? firstValue:unitData,
-                            //   ),
-                            // ),
-                            // SizedBox(width: 5),
-                            // Count(
-                            //   productId: widget.productId,
-                            //   productImage: widget.productImage,
-                            //   productName: widget.productName,
-                            //   productPrice: widget.productPrice,
-                            //   productUnit: unitData == null ? firstValue:unitData,
-                            // ),
+                            Expanded(
+                              child: ProductUnit(
+                                onTap: (){
+                                  showModalBottomSheet(
+                                    context: context, 
+                                    builder: (context){
+                                      return Column(
+                                        mainAxisSize: MainAxisSize.min,
+                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                        children: widget.productUnit.productUnit.map<Widget>((data) {
+                                          return Column(
+                                            children: [
+                                              Padding(
+                                                padding: const EdgeInsets.symmetric(vertical:10, horizontal:10),
+                                                child: InkWell(
+                                                  onTap: () async{
+                                                    setState(() {
+                                                      unitData = data;
+                                                    });
+                                                    Navigator.of(context).pop(); 
+                                                  },
+                                                  child: Text(
+                                                    data,
+                                                    style: TextStyle(
+                                                      color: primaryColor,
+                                                      fontSize: 18
+                                                    ),
+                                                  ),
+                                                ),
+                                              ),
+                                            ],
+                                          );
+                                        }).toList(),
+                                      );
+                                    }
+                                  );
+                                },
+                                title: unitData == null ? firstValue:unitData,
+                              ),
+                            ),
+                            SizedBox(width: 5),
+                            Count(
+                              productId: widget.productId,
+                              productImage: widget.productImage,
+                              productName: widget.productName,
+                              productPrice: widget.productPrice,
+                              productUnit: unitData == null ? firstValue:unitData,
+                            ),
                           ],
                         ),
                       ],

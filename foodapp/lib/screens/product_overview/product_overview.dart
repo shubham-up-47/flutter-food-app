@@ -5,11 +5,12 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:foodapp/config/colors.dart';
-// import 'package:foodapp/models/review_cart_model.dart';
+import 'package:foodapp/screens/review_cart/review_cart.dart';
+import 'package:foodapp/models/review_cart_model.dart';
 // import 'package:foodapp/providers/wishlist_provider.dart';
-// import 'package:foodapp/screens/review_cart/review_cart.dart';
-// import 'package:foodapp/widgets/count.dart';
-// import 'package:foodprovider/provider.dart';
+import 'package:foodapp/screens/review_cart/review_cart.dart';
+import 'package:foodapp/widgets/count.dart';
+import 'package:provider/provider.dart';
 
 enum SinginCharacter { fill, outline }
 
@@ -18,9 +19,10 @@ class ProductOverview extends StatefulWidget {
   final String productImage;
   final int productPrice;
   final String productId;
+  
   ProductOverview({required this.productId, required this.productImage, required this.productName, required this.productPrice});
 
-  @override 
+  @override
   _ProductOverviewState createState() => _ProductOverviewState();
 }
 
@@ -30,7 +32,7 @@ class _ProductOverviewState extends State<ProductOverview>{
   Widget bonntonNavigatorBar({ 
     required Color iconColor,
     required Color backgroundColor,
-    required Color color,
+    required Color color, 
     required String title,
     required IconData iconData,
     required Function() onTap,
@@ -115,11 +117,11 @@ class _ProductOverviewState extends State<ProductOverview>{
             title: "Go To Cart",
             iconData: Icons.shop_outlined,
             onTap: (){
-              // Navigator.of(context).push(
-              //   MaterialPageRoute(
-              //     builder: (context) => ReviewCart(),
-              //   ), 
-              // );
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) => ReviewCart(),
+                ), 
+              );
             }
           ),
         ],
@@ -190,37 +192,37 @@ class _ProductOverviewState extends State<ProductOverview>{
                         ),
                         Text("\$${widget.productPrice}"),
 
-                        // Count(
-                        //   productId: widget.productId,
-                        //   productImage: widget.productImage,
-                        //   productName: widget.productName,
-                        //   productPrice: widget.productPrice,
-                        //   productUnit: '500 Gram',
-                        // ),
-                       
-                        Container(
-                          padding: EdgeInsets.symmetric(horizontal: 30, vertical: 10),
-                          decoration: BoxDecoration(
-                            border: Border.all(color: Colors.grey),
-                            borderRadius: BorderRadius.circular(
-                              30,
-                            ),
-                          ),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Icon(
-                                Icons.add,
-                                size: 17,
-                                color: primaryColor,
-                              ),
-                              Text(
-                                "ADD",
-                                style: TextStyle(color: primaryColor),
-                              ), 
-                            ],
-                          ),
+                        Count(
+                          productId: widget.productId,
+                          productImage: widget.productImage,
+                          productName: widget.productName,
+                          productPrice: widget.productPrice,
+                          productUnit: '500 Gram',
                         ),
+                       
+                        // Container(
+                        //   padding: EdgeInsets.symmetric(horizontal: 30, vertical: 10),
+                        //   decoration: BoxDecoration(
+                        //     border: Border.all(color: Colors.grey),
+                        //     borderRadius: BorderRadius.circular(
+                        //       30,
+                        //     ),
+                        //   ),
+                        //   child: Row(
+                        //     mainAxisAlignment: MainAxisAlignment.center,
+                        //     children: [
+                        //       Icon(
+                        //         Icons.add,
+                        //         size: 17,
+                        //         color: primaryColor,
+                        //       ),
+                        //       Text(
+                        //         "ADD",
+                        //         style: TextStyle(color: primaryColor),
+                        //       ), 
+                        //     ],
+                        //   ),
+                        // ),
                       ],
                     ),
                   ),

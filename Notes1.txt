@@ -20,7 +20,7 @@
 *If flutter page is not rendering, then wait for sometime or inspect error of page in browser
 *{FlatButton,RaisedButton,OutlineButton} are replaced by {TextButton,ElevatedButton,OutlinedButton}
 
-
+ 
 
 *To inspect error by a page,
 - right click on that page

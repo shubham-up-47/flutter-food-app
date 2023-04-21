@@ -1,17 +1,15 @@
-// import 'package:app/models/review_cart_model.dart'; 
-// import 'package:app/config/colors.dart';
-// import 'package:app/providers/user_provider.dart';
-// import 'package:app/screens/home/home_screen.dart';
-// import 'package:app/screens/my_profile/my_profile.dart';
-// import 'package:app/screens/review_cart/review_cart.dart';
-// import 'package:app/screens/wishList/wish_list.dart';
-import 'package:flutter/material.dart';
+import 'package:foodapp/models/review_cart_model.dart'; 
+import 'package:foodapp/config/colors.dart';
+import 'package:foodapp/providers/user_provider.dart';
 import 'package:foodapp/screens/home/home_screen.dart';
 import 'package:foodapp/screens/my_profile/my_profile.dart';
+import 'package:foodapp/screens/review_cart/review_cart.dart';
+// import 'package:app/screens/wishList/wish_list.dart';
+import 'package:flutter/material.dart'; 
 
 class DrawerSide extends StatefulWidget{
-  // UserProvider userProvider;
-  // DrawerSide({this.userProvider});
+  UserProvider userProvider;
+  DrawerSide({required this.userProvider});
 
   @override 
   _DrawerSideState createState() => _DrawerSideState();
@@ -29,7 +27,7 @@ class _DrawerSideState extends State<DrawerSide>{
         ),
         title: Text(
           title!,
-          style: TextStyle(color: Colors.black45),
+          style: TextStyle(color: textColor),
         ),
       ),
     );
@@ -37,10 +35,10 @@ class _DrawerSideState extends State<DrawerSide>{
 
   @override 
   Widget build(BuildContext context){
-    // var userData = widget.userProvider.currentUserData;
+    var userData = widget.userProvider.currentUserData;
     return Drawer(
       child: Container(
-        color: Color(0xffd1ad17),
+        color: primaryColor,
         child: ListView(
           children: [
 
@@ -55,7 +53,7 @@ class _DrawerSideState extends State<DrawerSide>{
                       child: CircleAvatar(
                         backgroundColor: Colors.yellow,
                         backgroundImage: NetworkImage(
-                          // userData.userImage ?? 
+                          userData.userImage ?? 
                           "https://s3.envato.com/files/328957910/vegi_thumb.png",
                         ),
                         radius: 40,
@@ -66,11 +64,11 @@ class _DrawerSideState extends State<DrawerSide>{
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        // Text(userData.userName),
-                        // Text(
-                        //   userData.userEmail,
-                        //   overflow: TextOverflow.ellipsis,
-                        // ),
+                        Text(userData.userName),
+                        Text(
+                          userData.userEmail,
+                          overflow: TextOverflow.ellipsis,
+                        ),
                       ],
                     )
                   ]
@@ -94,7 +92,7 @@ class _DrawerSideState extends State<DrawerSide>{
               onTap: (){
                 Navigator.of(context).push(
                   MaterialPageRoute(
-                    builder: (context) => HomeScreen(),
+                    builder: (context) => ReviewCart(),
                   ),
                 );
               },
@@ -105,7 +103,7 @@ class _DrawerSideState extends State<DrawerSide>{
               onTap: (){
                 Navigator.of(context).push( 
                   MaterialPageRoute(
-                    builder: (context) => MyProfile(),
+                    builder: (context) => MyProfile(userProvider:widget.userProvider),
                   ),
                 );
               }

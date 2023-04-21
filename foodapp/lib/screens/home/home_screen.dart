@@ -1,16 +1,14 @@
 // import 'package:foodapp/models/review_cart_model.dart';
 import 'package:flutter/material.dart';
 import 'package:foodapp/config/colors.dart';
-import 'package:foodapp/screens/home/drawer_side.dart';
-// import 'package:foodapp/config/colors.dart';
-// import 'package:app/providers/product_provider.dart';
-// import 'package:app/providers/user_provider.dart';
-// import 'package:app/screens/product_overview/product_overview.dart';
-// import 'package:app/screens/home/single_product.dart';
-// import 'package:app/screens/review_cart/review_cart.dart';
-// import 'package:app/screens/search/search.dart';
-// import 'package:provider/provider.dart';
-// import 'drawer_side.dart'; 
+import 'package:foodapp/providers/product_provider.dart';
+import 'package:foodapp/screens/home/drawer_side.dart';  
+import 'package:foodapp/providers/user_provider.dart';
+import 'package:foodapp/screens/product_overview/product_overview.dart';
+import 'package:foodapp/screens/home/single_product.dart';
+import 'package:foodapp/screens/review_cart/review_cart.dart';
+import 'package:foodapp/screens/search/search.dart';
+import 'package:provider/provider.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -18,7 +16,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen>{ 
-  // ProductProvider productProvider;
+  late ProductProvider productProvider;
 
   Widget _buildHerbsProduct(context){
     return Column(
@@ -32,13 +30,13 @@ class _HomeScreenState extends State<HomeScreen>{
               Text('Herbs Seasonings'),
               GestureDetector(
                 onTap: (){
-                  // Navigator.of(context).push(
-                  //   MaterialPageRoute(
-                  //     builder: (context) => Search(
-                  //       // search: productProvider.getHerbsProductDataList,
-                  //     ),
-                  //   ),
-                  // );
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) => Search(
+                        search: productProvider.getHerbsProductDataList,
+                      ),
+                    ),
+                  );
                 },
                 child: Text(
                   'view all',
@@ -48,32 +46,33 @@ class _HomeScreenState extends State<HomeScreen>{
             ],
           ),
         ),
+
         SingleChildScrollView(
           scrollDirection: Axis.horizontal,
           child: Row(
-            // children: productProvider.getHerbsProductDataList.map(
-            //   (herbsProductData) {
-            //     return SingalProduct(
-            //       onTap: (){
-            //         Navigator.of(context).push(
-            //           MaterialPageRoute(
-            //             builder: (context) => ProductOverview(
-            //               productId: herbsProductData.productId,
-            //               productPrice: herbsProductData.productPrice,
-            //               productName: herbsProductData.productName,
-            //               productImage: herbsProductData.productImage
-            //             ),
-            //           ),
-            //         );
-            //       },
-            //       productId: herbsProductData.productId,
-            //       productPrice: herbsProductData.productPrice,
-            //       productImage: herbsProductData.productImage,
-            //       productName: herbsProductData.productName,
-            //       productUnit: herbsProductData,
-            //     );
-            //   },
-            // ).toList(),
+            children: productProvider.getHerbsProductDataList.map(
+              (herbsProductData) {
+                return SingalProduct(
+                  onTap: (){
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) => ProductOverview(
+                          productId: herbsProductData.productId,
+                          productPrice: herbsProductData.productPrice,
+                          productName: herbsProductData.productName,
+                          productImage: herbsProductData.productImage
+                        ),
+                      ),
+                    );
+                  },
+                  productId: herbsProductData.productId,
+                  productPrice: herbsProductData.productPrice,
+                  productImage: herbsProductData.productImage,
+                  productName: herbsProductData.productName,
+                  productUnit: herbsProductData,
+                );
+              },
+            ).toList(),
           ),
         )
       ],
@@ -92,11 +91,11 @@ class _HomeScreenState extends State<HomeScreen>{
               Text('Fresh Fruits'),
               GestureDetector(
                 onTap: (){
-                  // Navigator.of(context).push(
-                  //   MaterialPageRoute(
-                  //     // builder: (context) => Search(search: productProvider.getFreshProductDataList),
-                  //   ),
-                  // );
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) => Search(search: productProvider.getFreshProductDataList),
+                    ),
+                  );
                 },
                 child: Text(
                   'view all',
@@ -109,29 +108,29 @@ class _HomeScreenState extends State<HomeScreen>{
         SingleChildScrollView(
           scrollDirection: Axis.horizontal,
           child: Row(
-            // children: productProvider.getFreshProductDataList.map(
-            //   (freshProductData){
-            //     return SingalProduct(
-            //       onTap: (){
-            //         Navigator.of(context).push(
-            //           MaterialPageRoute(
-            //             builder: (context) => ProductOverview(
-            //               productId: freshProductData.productId,
-            //               productImage: freshProductData.productImage,
-            //               productName: freshProductData.productName,
-            //               productPrice: freshProductData.productPrice
-            //             ),
-            //           ),
-            //         );
-            //       },
-            //       productId: freshProductData.productId,
-            //       productImage: freshProductData.productImage,
-            //       productName: freshProductData.productName,
-            //       productPrice: freshProductData.productPrice,
-            //       productUnit: freshProductData
-            //     );
-            //   },
-            // ).toList(),
+            children: productProvider.getFreshProductDataList.map(
+              (freshProductData){
+                return SingalProduct(
+                  onTap: (){
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) => ProductOverview(
+                          productId: freshProductData.productId,
+                          productImage: freshProductData.productImage,
+                          productName: freshProductData.productName,
+                          productPrice: freshProductData.productPrice
+                        ),
+                      ),
+                    );
+                  },
+                  productId: freshProductData.productId,
+                  productImage: freshProductData.productImage,
+                  productName: freshProductData.productName,
+                  productPrice: freshProductData.productPrice,
+                  productUnit: freshProductData
+                );
+              },
+            ).toList(),
           ),
         ),
       ],
@@ -150,13 +149,13 @@ class _HomeScreenState extends State<HomeScreen>{
               Text('Root Vegetable'),
               GestureDetector(
                 onTap: (){
-                  // Navigator.of(context).push(
-                  //   MaterialPageRoute(
-                  //     builder: (context) => Search(
-                  //       search: productProvider.getRootProductDataList,
-                  //     ),
-                  //   ),
-                  // );
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) => Search(
+                        search: productProvider.getRootProductDataList,
+                      ),
+                    ),
+                  );
                 },
                 child: Text(
                   'view all',
@@ -169,29 +168,29 @@ class _HomeScreenState extends State<HomeScreen>{
         SingleChildScrollView(
           scrollDirection: Axis.horizontal,
           child: Row(
-            // children: productProvider.getRootProductDataList.map(
-            //   (rootProductData){
-            //     return SingalProduct(
-            //       onTap: (){
-            //         Navigator.of(context).push(
-            //           MaterialPageRoute(
-            //             builder: (context) => ProductOverview(
-            //               productId: rootProductData.productId,
-            //               productImage: rootProductData.productImage,
-            //               productName: rootProductData.productName,
-            //               productPrice: rootProductData.productPrice
-            //             ),
-            //           ),
-            //         );
-            //       },
-            //       productId: rootProductData.productId,
-            //       productImage: rootProductData.productImage,
-            //       productName: rootProductData.productName,
-            //       productPrice: rootProductData.productPrice,
-            //       productUnit: rootProductData
-            //     );
-            //   },
-            // ).toList(),
+            children: productProvider.getRootProductDataList.map(
+              (rootProductData){
+                return SingalProduct(
+                  onTap: (){
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) => ProductOverview(
+                          productId: rootProductData.productId,
+                          productImage: rootProductData.productImage,
+                          productName: rootProductData.productName,
+                          productPrice: rootProductData.productPrice
+                        ),
+                      ),
+                    );
+                  },
+                  productId: rootProductData.productId,
+                  productImage: rootProductData.productImage,
+                  productName: rootProductData.productName,
+                  productPrice: rootProductData.productPrice,
+                  productUnit: rootProductData
+                );
+              },
+            ).toList(),
           ),
         ),
       ],
@@ -200,30 +199,30 @@ class _HomeScreenState extends State<HomeScreen>{
 
   @override
   void initState(){
-    // ProductProvider initproductProvider = Provider.of(context, listen: false);
-    // initproductProvider.fatchHerbsProductData();
-    // initproductProvider.fatchFreshProductData();
-    // initproductProvider.fatchRootProductData();
+    ProductProvider initproductProvider = Provider.of(context, listen: false);
+    initproductProvider.fatchHerbsProductData();
+    initproductProvider.fatchFreshProductData();
+    initproductProvider.fatchRootProductData();
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
-    // productProvider = Provider.of(context);
-    // UserProvider userProvider = Provider.of(context);
-    // userProvider.getUserData();
+    productProvider = Provider.of(context);
+    UserProvider userProvider = Provider.of(context);
+    userProvider.getUserData();
 
     return Scaffold( 
       drawer: DrawerSide( 
-        // userProvider: userProvider,
+        userProvider: userProvider,
       ),
 
       appBar: AppBar(
-        iconTheme: IconThemeData(color: Colors.black),
+        iconTheme: IconThemeData(color: textColor),
         title: Text(
           'Home',
           style: TextStyle(
-            color: Colors.black,
+            color: textColor,
             fontSize: 17
           ),
         ),
@@ -233,11 +232,11 @@ class _HomeScreenState extends State<HomeScreen>{
             backgroundColor: Color(0xffd6d382), 
             child: IconButton(
               onPressed: (){
-        //         // Navigator.of(context).push(
-        //         //   // MaterialPageRoute(
-        //         //   //   // builder: (context) => Search(search: productProvider.gerAllProductSearch),
-        //         //   // ),
-        //         // );
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => Search(search: productProvider.gerAllProductSearch),
+                  ),
+                );
               }, 
               icon: Icon(
                 Icons.search, 
@@ -248,14 +247,14 @@ class _HomeScreenState extends State<HomeScreen>{
           ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 5),
-        //     child: GestureDetector(
-        //       onTap: (){
-        //         Navigator.of(context).push(
-        //           MaterialPageRoute(
-        //             builder: (context) => ReviewCart()
-        //           ),
-        //         );
-        //       },
+            child: GestureDetector(
+              onTap: (){
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => ReviewCart()
+                  ),
+                );
+              },
               child: CircleAvatar(
                 backgroundColor: Color(0xffd6d382),
                 radius: 15,
@@ -265,10 +264,10 @@ class _HomeScreenState extends State<HomeScreen>{
                   color: textColor,
                 ),
               ),
-            // ),
+            ),
           ), 
         ],
-        backgroundColor: Color(0xffd6b738),
+        // backgroundColor: Color(0xffd6b738),
       ),
      
       body: Padding(

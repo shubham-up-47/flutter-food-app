@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:foodapp/config/colors.dart';
-// import 'package:foodapp/models/user_model.dart';
-// import 'package:foodapp/providers/user_provider.dart';
+import 'package:foodapp/models/user_model.dart';
+import 'package:foodapp/providers/user_provider.dart';
 import 'package:foodapp/screens/home/drawer_side.dart';
 
 class MyProfile extends StatefulWidget {
-  // UserProvider userProvider;
-  // MyProfile({this.userProvider});
+  UserProvider userProvider;
+  MyProfile({required this.userProvider});
 
   @override
   _MyProfileState createState() => _MyProfileState();
@@ -31,7 +31,7 @@ class _MyProfileState extends State<MyProfile>{
   }
 
   Widget build(BuildContext context) {
-    // var userData = widget.userProvider.currentUserData;
+    var userData = widget.userProvider.currentUserData;
 
     return Scaffold(
       backgroundColor: primaryColor,
@@ -48,7 +48,7 @@ class _MyProfileState extends State<MyProfile>{
       ),
 
       drawer: DrawerSide(
-        // userProvider: widget.userProvider,
+        userProvider: widget.userProvider,
       ),
  
       body: Stack(
@@ -88,18 +88,18 @@ class _MyProfileState extends State<MyProfile>{
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  // Text(
-                                  //   userData.userName,
-                                  //   style: TextStyle(
-                                  //     fontSize: 14,
-                                  //     fontWeight: FontWeight.bold,
-                                  //     color: textColor
-                                  //   ),
-                                  // ),
+                                  Text(
+                                    userData.userName,
+                                    style: TextStyle(
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.bold,
+                                      color: textColor
+                                    ),
+                                  ),
                                   SizedBox(
                                     height: 10,
                                   ),
-                                  // Text(userData.userEmail),
+                                  Text(userData.userEmail),
                                 ],
                               ),
                               CircleAvatar(
@@ -159,7 +159,7 @@ class _MyProfileState extends State<MyProfile>{
               backgroundColor: primaryColor,
               child: CircleAvatar(
                 backgroundImage: NetworkImage(
-                  // userData.userImage ??
+                  userData.userImage ??
                   "https://s3.envato.com/files/328957910/vegi_thumb.pnb",
                 ),
                 radius: 45,
