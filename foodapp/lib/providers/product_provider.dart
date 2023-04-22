@@ -23,17 +23,13 @@ class ProductProvider with ChangeNotifier {
   fatchHerbsProductData() async {
     List<ProductModel> newList = [];
     QuerySnapshot value = await FirebaseFirestore.instance.collection("HerbsProduct").get();
-    
-    print("shubham1B ${herbsProductList.length}"); 
-
+     
     value.docs.forEach((element) {
       productModels(element);
       newList.add(productModel);
     });
-
-    print("shubham2B ${herbsProductList.length}"); 
-    herbsProductList = newList;
-    print("shubham3B ${herbsProductList.length}"); 
+    
+    herbsProductList = newList; 
     notifyListeners();
   } 
   List<ProductModel> get getHerbsProductDataList{

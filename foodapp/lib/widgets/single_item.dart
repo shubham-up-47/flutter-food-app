@@ -11,13 +11,13 @@ class SingleItem extends StatefulWidget{
   String productName;
   bool wishList = false;
   int productPrice;
-  String productId;
+  // String productId;
   int productQuantity;
   Function() onDelete;
   var productUnit;
   SingleItem({
     required this.productQuantity,
-    required this.productId,
+    // required this.productId,
     this.productUnit,
     required this.onDelete,
     required this.isBool,
@@ -162,7 +162,7 @@ class _SingleItemState extends State<SingleItem>{
                       : EdgeInsets.only(left: 15, right: 15),
                   child: widget.isBool == false
                       ? Count(
-                        productId: widget.productId,
+                        // productId: widget.productId,
                         productImage: widget.productImage,
                         productName: widget.productName,
                         productPrice: widget.productPrice,
@@ -201,7 +201,7 @@ class _SingleItemState extends State<SingleItem>{
                                               });
                                               reviewCartProvider.updateReviewCartData(
                                                 cartImage: widget.productImage,
-                                                cartId: widget.productId,
+                                                // cartId: widget.productId,
                                                 cartName: widget.productName,
                                                 cartPrice: widget.productPrice,
                                                 cartQuantity: count
@@ -226,7 +226,7 @@ class _SingleItemState extends State<SingleItem>{
                                               });
                                               reviewCartProvider.updateReviewCartData(
                                                 cartImage: widget.productImage,
-                                                cartId: widget.productId,
+                                                // cartId: widget.productId,
                                                 cartName: widget.productName,
                                                 cartPrice: widget.productPrice,
                                                 cartQuantity: count

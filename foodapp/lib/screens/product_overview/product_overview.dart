@@ -18,10 +18,15 @@ class ProductOverview extends StatefulWidget {
   final String productName;
   final String productImage;
   final int productPrice;
-  final String productId;
+  // final String productId;
   
-  ProductOverview({required this.productId, required this.productImage, required this.productName, required this.productPrice});
-
+  ProductOverview({
+    // required this.productId, 
+    required this.productImage, 
+    required this.productName, 
+    required this.productPrice
+  });
+ 
   @override
   _ProductOverviewState createState() => _ProductOverviewState();
 }
@@ -64,23 +69,23 @@ class _ProductOverviewState extends State<ProductOverview>{
   }
 
   bool wishListBool = false;
-  getWishListBool(){
-    FirebaseFirestore.instance.collection("WishList").doc(FirebaseAuth.instance.currentUser?.uid).collection("YourWishList").doc(widget.productId).get().then((value) => {
-      if(this.mounted){
-        if(value.exists){
-          setState(() {
-            wishListBool = value.get("wishList");
-          }),
-        }
-      }
-    });
-  }
+  // getWishListBool(){
+  //   FirebaseFirestore.instance.collection("WishList").doc(FirebaseAuth.instance.currentUser?.uid).collection("YourWishList").doc(widget.productId).get().then((value) => {
+  //     if(this.mounted){
+  //       if(value.exists){
+  //         setState(() {
+  //           wishListBool = value.get("wishList");
+  //         }),
+  //       }
+  //     }
+  //   });
+  // }
 
   
   @override 
   Widget build(BuildContext context) {
     // WishListProvider wishListProvider = Provider.of(context);
-    getWishListBool();
+    // getWishListBool();
 
     return Scaffold(
       bottomNavigationBar: Row(
@@ -150,7 +155,7 @@ class _ProductOverviewState extends State<ProductOverview>{
                   Container(
                     height: 250,
                     padding: EdgeInsets.all(40),
-                    child: Image.network(             //       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRi8rQaieLFuYZY9wmsuGq8K5JFsCTIoTZJjw&usqp=CAU"
+                    child: Image.network(  
                       widget.productImage ?? "",
                     ),
                   ),
@@ -193,7 +198,7 @@ class _ProductOverviewState extends State<ProductOverview>{
                         Text("\$${widget.productPrice}"),
 
                         Count(
-                          productId: widget.productId,
+                          // productId: widget.productId,
                           productImage: widget.productImage,
                           productName: widget.productName,
                           productPrice: widget.productPrice,

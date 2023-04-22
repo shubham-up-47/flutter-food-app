@@ -1,24 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:foodapp/models/product_model.dart';
 import 'package:foodapp/config/colors.dart'; 
-// import 'package:foodapp/widgets/count.dart';
-// import 'package:foodapp/widgets/product_unit.dart'; 
+import 'package:foodapp/widgets/count.dart';
+import 'package:foodapp/widgets/product_unit.dart'; 
 
 class SingalProduct extends StatefulWidget{
   final String productImage;
   final String productName;
   final int productPrice;
-  // final Function() onTap;
+  final Function() onTap;
   // final String productId;
   // final ProductModel productUnit;
 
   SingalProduct(
     {
       // required this.productId,
+      // required this.productUnit,
       required this.productImage,
       required this.productName,
-      // required this.productUnit,
-      // required this.onTap,
+      required this.onTap,
       required this.productPrice 
     }
   );
@@ -55,7 +55,7 @@ class _SingalProductState extends State<SingalProduct>{
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 GestureDetector(
-                  // onTap: widget.onTap,
+                  onTap: widget.onTap,
                   child: Container(
                     height: 150,
                     padding: EdgeInsets.all(5),
@@ -129,13 +129,13 @@ class _SingalProductState extends State<SingalProduct>{
                             //   ),
                             // ),
                             SizedBox(width: 5),
-                            // Count(
-                            //   productId: widget.productId,
-                            //   productImage: widget.productImage,
-                            //   productName: widget.productName,
-                            //   productPrice: widget.productPrice,
-                            //   productUnit: unitData == null ? firstValue:unitData,
-                            // ),
+                            Count(
+                              // productId: widget.productId,
+                              productImage: widget.productImage,
+                              productName: widget.productName,
+                              productPrice: widget.productPrice,
+                              productUnit: unitData == null ? firstValue:unitData,
+                            ),
                           ],
                         ),
                       ],

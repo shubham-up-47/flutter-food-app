@@ -1,5 +1,5 @@
 class ReviewCartModel {
-  String cartId;
+  // String cartId;
   String cartImage;
   String cartName;
   int cartPrice;
@@ -8,7 +8,7 @@ class ReviewCartModel {
 
   ReviewCartModel(
     {
-      required this.cartId,
+      // required this.cartId,
       this.cartUnit,
       required this.cartImage,
       required this.cartName,

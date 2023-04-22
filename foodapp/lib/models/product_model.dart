@@ -2,18 +2,18 @@ class ProductModel {
   String productName;
   String productImage;
   int productPrice;
-  // String productId;
   int productQuantity;
+  // String productId;
   // List<dynamic> productUnit;
   
   ProductModel(
     {
       required this.productQuantity,
-      // required this.productId,
-      // required this.productUnit,
       required this.productImage, 
       required this.productName,
-      required this.productPrice
+      required this.productPrice,
+      // required this.productId,
+      // required this.productUnit
     }
   );
 }

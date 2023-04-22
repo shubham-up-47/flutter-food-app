@@ -21,7 +21,7 @@ class ReviewCart extends StatelessWidget {
     Widget continueButton = TextButton(
       child: Text("Yes"),
       onPressed: () {
-        reviewCartProvider.reviewCartDataDelete(delete.cartId);
+        // reviewCartProvider.reviewCartDataDelete(delete.cartId);
         Navigator.of(context).pop();
       },
     );
@@ -106,7 +106,7 @@ class ReviewCart extends StatelessWidget {
                       productImage: data.cartImage,
                       productName: data.cartName,
                       productPrice: data.cartPrice,
-                      productId: data.cartId,
+                      // productId: data.cartId,
                       productQuantity: data.cartQuantity,
                       productUnit: data.cartUnit,
                       onDelete: () {
