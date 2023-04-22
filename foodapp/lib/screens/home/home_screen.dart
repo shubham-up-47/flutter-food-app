@@ -4,11 +4,12 @@ import 'package:foodapp/config/colors.dart';
 import 'package:foodapp/providers/product_provider.dart';
 import 'package:foodapp/screens/home/drawer_side.dart';  
 import 'package:foodapp/providers/user_provider.dart';
-import 'package:foodapp/screens/product_overview/product_overview.dart';
+// import 'package:foodapp/screens/product_overview/product_overview.dart';
 import 'package:foodapp/screens/home/single_product.dart';
 import 'package:foodapp/screens/review_cart/review_cart.dart';
 import 'package:foodapp/screens/search/search.dart';
 import 'package:provider/provider.dart';
+import 'dart:developer';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -45,35 +46,129 @@ class _HomeScreenState extends State<HomeScreen>{
               ),
             ],
           ),
-        ),
-
+        ), 
         SingleChildScrollView(
-          scrollDirection: Axis.horizontal,
-          child: Row(
+          scrollDirection: Axis.horizontal, 
+      // child: Row(
+      //         children: [ 
+      //           Container(
+      //             height: 230,
+      //             width: 160,
+      //             decoration: BoxDecoration(
+      //               color: Color(0xffd9dad9),
+      //               borderRadius: BorderRadius.circular(10),
+      //             ),
+      //             child: Column(
+      //               children: [
+      //                 Expanded(
+      //                   flex: 2, 
+      //                   child: Image.network('https://pngimg.com/uploads/spinach/spinach_PNG33.png')
+      //                 ),
+      //                 Expanded(
+      //                   child: Padding(
+      //                     padding: const EdgeInsets.symmetric(
+      //                       horizontal: 10,
+      //                       vertical: 5
+      //                     ),
+      //                     child: Column(
+      //                       crossAxisAlignment: CrossAxisAlignment.start,
+      //                       children: [
+      //                         Text(
+      //                           'Fresh Basil',
+      //                           style: TextStyle(
+      //                             color: Colors.black,
+      //                             fontWeight: FontWeight.bold
+      //                           ),
+      //                         ),
+      //                         Text(
+      //                           '50\$/50 Gram',
+      //                           style: TextStyle(
+      //                             color: Colors.grey,
+      //                           ),
+      //                         ),
+      //                         Row(
+      //                           children: [
+      //                             Expanded(
+      //                               child: Container(
+      //                                 height: 30,
+      //                                 width: 120,
+      //                                 child: OutlinedButton(
+      //                                   child: Row(
+      //                                     children: [
+      //                                       Expanded(child: Text('50 Gram', style: TextStyle(fontSize: 10),)),
+      //                                       Center(
+      //                                         child: Icon(
+      //                                           Icons.arrow_drop_down,
+      //                                           size: 25,
+      //                                           color: Colors.yellow,
+      //                                         ),
+      //                                       )
+      //                                     ],
+      //                                   ),
+      //                                   onPressed: () {},
+      //                                 ),
+      //                               ), 
+      //                             ),
+      //                             Expanded(
+      //                               child: Container(
+      //                                 height: 30,
+      //                                 width: 120,
+      //                                 child: OutlinedButton(
+      //                                   child: Row(
+      //                                     children: [
+      //                                       Expanded(child: Text('75 Gram', style: TextStyle(fontSize: 10),)),
+      //                                       Center(
+      //                                         child: Icon(
+      //                                           Icons.arrow_drop_down,
+      //                                           size: 25,
+      //                                           color: Colors.yellow,
+      //                                         ),
+      //                                       )
+      //                                     ],
+      //                                   ),
+      //                                   onPressed: () {},
+      //                                 ),
+      //                               ), 
+      //                             ),
+      //                           ],
+      //                         )
+      //                       ],
+      //                     ),
+      //                   )
+      //                 )
+      //               ]
+      //             ),
+      //           )
+      //         ]
+      //       ), 
+      //       /*
+
+          child: Row( 
             children: productProvider.getHerbsProductDataList.map(
               (herbsProductData) {
                 return SingalProduct(
-                  onTap: (){
-                    Navigator.of(context).push(
-                      MaterialPageRoute(
-                        builder: (context) => ProductOverview(
-                          productId: herbsProductData.productId,
-                          productPrice: herbsProductData.productPrice,
-                          productName: herbsProductData.productName,
-                          productImage: herbsProductData.productImage
-                        ),
-                      ),
-                    );
-                  },
-                  productId: herbsProductData.productId,
+                  // onTap: (){
+                  //   Navigator.of(context).push(
+                  //     MaterialPageRoute(
+                  //       builder: (context) => ProductOverview(
+                  //         productId: herbsProductData.productId,
+                  //         productPrice: herbsProductData.productPrice,
+                  //         productName: herbsProductData.productName,
+                  //         productImage: herbsProductData.productImage
+                  //       ),
+                  //     ),
+                  //   );
+                  // },
+                  // productId: herbsProductData.productId,
                   productPrice: herbsProductData.productPrice,
                   productImage: herbsProductData.productImage,
                   productName: herbsProductData.productName,
-                  productUnit: herbsProductData,
+                  // productUnit: herbsProductData,
                 );
               },
             ).toList(),
           ),
+          
         )
       ],
     );
@@ -111,23 +206,23 @@ class _HomeScreenState extends State<HomeScreen>{
             children: productProvider.getFreshProductDataList.map(
               (freshProductData){
                 return SingalProduct(
-                  onTap: (){
-                    Navigator.of(context).push(
-                      MaterialPageRoute(
-                        builder: (context) => ProductOverview(
-                          productId: freshProductData.productId,
-                          productImage: freshProductData.productImage,
-                          productName: freshProductData.productName,
-                          productPrice: freshProductData.productPrice
-                        ),
-                      ),
-                    );
-                  },
-                  productId: freshProductData.productId,
+                  // onTap: (){
+                  //   Navigator.of(context).push(
+                  //     MaterialPageRoute(
+                  //       builder: (context) => ProductOverview(
+                  //         productId: freshProductData.productId,
+                  //         productImage: freshProductData.productImage,
+                  //         productName: freshProductData.productName,
+                  //         productPrice: freshProductData.productPrice
+                  //       ),
+                  //     ),
+                  //   );
+                  // },
+                  // productId: freshProductData.productId,
                   productImage: freshProductData.productImage,
                   productName: freshProductData.productName,
                   productPrice: freshProductData.productPrice,
-                  productUnit: freshProductData
+                  // productUnit: freshProductData
                 );
               },
             ).toList(),
@@ -171,23 +266,23 @@ class _HomeScreenState extends State<HomeScreen>{
             children: productProvider.getRootProductDataList.map(
               (rootProductData){
                 return SingalProduct(
-                  onTap: (){
-                    Navigator.of(context).push(
-                      MaterialPageRoute(
-                        builder: (context) => ProductOverview(
-                          productId: rootProductData.productId,
-                          productImage: rootProductData.productImage,
-                          productName: rootProductData.productName,
-                          productPrice: rootProductData.productPrice
-                        ),
-                      ),
-                    );
-                  },
-                  productId: rootProductData.productId,
+                  // onTap: (){
+                  //   Navigator.of(context).push(
+                  //     MaterialPageRoute(
+                  //       builder: (context) => ProductOverview(
+                  //         productId: rootProductData.productId,
+                  //         productImage: rootProductData.productImage,
+                  //         productName: rootProductData.productName,
+                  //         productPrice: rootProductData.productPrice
+                  //       ),
+                  //     ),
+                  //   );
+                  // },
+                  // productId: rootProductData.productId,
                   productImage: rootProductData.productImage,
                   productName: rootProductData.productName,
                   productPrice: rootProductData.productPrice,
-                  productUnit: rootProductData
+                  // productUnit: rootProductData
                 );
               },
             ).toList(),
@@ -200,7 +295,7 @@ class _HomeScreenState extends State<HomeScreen>{
   @override
   void initState(){
     ProductProvider initproductProvider = Provider.of(context, listen: false);
-    initproductProvider.fatchHerbsProductData();
+    initproductProvider.fatchHerbsProductData(); 
     initproductProvider.fatchFreshProductData();
     initproductProvider.fatchRootProductData();
     super.initState();
@@ -208,7 +303,7 @@ class _HomeScreenState extends State<HomeScreen>{
 
   @override
   Widget build(BuildContext context) {
-    productProvider = Provider.of(context);
+    productProvider = Provider.of(context); 
     UserProvider userProvider = Provider.of(context);
     userProvider.getUserData();
 
@@ -354,8 +449,107 @@ class _HomeScreenState extends State<HomeScreen>{
                 ],
               ), 
             ), 
+
+            // Row(
+            //   children: [ 
+            //     Container(
+            //       height: 230,
+            //       width: 160,
+            //       decoration: BoxDecoration(
+            //         color: Color(0xffd9dad9),
+            //         borderRadius: BorderRadius.circular(10),
+            //       ),
+            //       child: Column(
+            //         children: [
+            //           Expanded(
+            //             flex: 2, 
+            //             child: Image.network('https://pngimg.com/uploads/spinach/spinach_PNG33.png')
+            //           ),
+            //           Expanded(
+            //             child: Padding(
+            //               padding: const EdgeInsets.symmetric(
+            //                 horizontal: 10,
+            //                 vertical: 5
+            //               ),
+            //               child: Column(
+            //                 crossAxisAlignment: CrossAxisAlignment.start,
+            //                 children: [
+            //                   Text(
+            //                     'Fresh Basil',
+            //                     style: TextStyle(
+            //                       color: Colors.black,
+            //                       fontWeight: FontWeight.bold
+            //                     ),
+            //                   ),
+            //                   Text(
+            //                     '50\$/50 Gram',
+            //                     style: TextStyle(
+            //                       color: Colors.grey,
+            //                     ),
+            //                   ),
+            //                   Row(
+            //                     children: [
+            //                       Expanded(
+            //                         child: Container(
+            //                           height: 30,
+            //                           width: 120,
+            //                           child: OutlinedButton(
+            //                             child: Row(
+            //                               children: [
+            //                                 Expanded(child: Text('50 Gram', style: TextStyle(fontSize: 10),)),
+            //                                 Center(
+            //                                   child: Icon(
+            //                                     Icons.arrow_drop_down,
+            //                                     size: 25,
+            //                                     color: Colors.yellow,
+            //                                   ),
+            //                                 )
+            //                               ],
+            //                             ),
+            //                             onPressed: () {},
+            //                           ),
+            //                         ), 
+            //                       ),
+            //                       Expanded(
+            //                         child: Container(
+            //                           height: 30,
+            //                           width: 120,
+            //                           child: OutlinedButton(
+            //                             child: Row(
+            //                               children: [
+            //                                 Expanded(child: Text('75 Gram', style: TextStyle(fontSize: 10),)),
+            //                                 Center(
+            //                                   child: Icon(
+            //                                     Icons.arrow_drop_down,
+            //                                     size: 25,
+            //                                     color: Colors.yellow,
+            //                                   ),
+            //                                 )
+            //                               ],
+            //                             ),
+            //                             onPressed: () {},
+            //                           ),
+            //                         ), 
+            //                       ),
+            //                     ],
+            //                   )
+            //                 ],
+            //               ),
+            //             )
+            //           )
+            //         ]
+            //       ),
+            //     )
+            //   ]
+            // ), 
+
+            
+            // productProvider.fatchHerbsProductData(), 
+
             _buildHerbsProduct(context),
+            
             _buildFreshProduct(context),
+             
             _buildRootProduct(), 
           ],
         ),
