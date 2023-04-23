@@ -9,12 +9,12 @@ class SingalProduct extends StatefulWidget{
   final String productName;
   final int productPrice;
   final Function() onTap;
-  // final String productId;
+  final String productId;
   // final ProductModel productUnit;
 
   SingalProduct(
     {
-      // required this.productId,
+      required this.productId,
       // required this.productUnit,
       required this.productImage,
       required this.productName,
@@ -130,11 +130,11 @@ class _SingalProductState extends State<SingalProduct>{
                             // ),
                             SizedBox(width: 5),
                             Count(
-                              // productId: widget.productId,
+                              productId: widget.productId,
                               productImage: widget.productImage,
                               productName: widget.productName,
                               productPrice: widget.productPrice,
-                              productUnit: unitData == null ? firstValue:unitData,
+                              // productUnit: unitData == null ? firstValue:unitData,
                             ),
                           ],
                         ),

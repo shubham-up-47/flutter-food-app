@@ -3,7 +3,7 @@ class ProductModel {
   String productImage;
   int productPrice;
   int productQuantity;
-  // String productId;
+  String productId;
   // List<dynamic> productUnit;
   
   ProductModel(
@@ -12,7 +12,7 @@ class ProductModel {
       required this.productImage, 
       required this.productName,
       required this.productPrice,
-      // required this.productId,
+      required this.productId,
       // required this.productUnit
     }
   );

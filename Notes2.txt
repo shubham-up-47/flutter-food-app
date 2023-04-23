@@ -63,3 +63,9 @@
 - cd ios && rm -f Podfile.lock
 - flutter packages get
 - cd ios && pod install --repo-update
+
+
+*If you are unable to read entry from firebase db, then check whether you are accessing available attributes only or not
+
+
+

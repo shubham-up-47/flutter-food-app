@@ -18,10 +18,10 @@ class ProductOverview extends StatefulWidget {
   final String productName;
   final String productImage;
   final int productPrice;
-  // final String productId;
+  final String productId;
   
   ProductOverview({
-    // required this.productId, 
+    required this.productId, 
     required this.productImage, 
     required this.productName, 
     required this.productPrice
@@ -69,17 +69,17 @@ class _ProductOverviewState extends State<ProductOverview>{
   }
 
   bool wishListBool = false;
-  // getWishListBool(){
-  //   FirebaseFirestore.instance.collection("WishList").doc(FirebaseAuth.instance.currentUser?.uid).collection("YourWishList").doc(widget.productId).get().then((value) => {
-  //     if(this.mounted){
-  //       if(value.exists){
-  //         setState(() {
-  //           wishListBool = value.get("wishList");
-  //         }),
-  //       }
-  //     }
-  //   });
-  // }
+  getWishListBool(){
+    FirebaseFirestore.instance.collection("WishList").doc(FirebaseAuth.instance.currentUser?.uid).collection("YourWishList").doc(widget.productId).get().then((value) => {
+      if(this.mounted){
+        if(value.exists){
+          setState(() {
+            wishListBool = value.get("wishList");
+          }),
+        }
+      }
+    });
+  }
 
   
   @override 
@@ -198,11 +198,11 @@ class _ProductOverviewState extends State<ProductOverview>{
                         Text("\$${widget.productPrice}"),
 
                         Count(
-                          // productId: widget.productId,
+                          productId: widget.productId,
                           productImage: widget.productImage,
                           productName: widget.productName,
                           productPrice: widget.productPrice,
-                          productUnit: '500 Gram',
+                          // productUnit: '500 Gram',
                         ),
                        
                         // Container(

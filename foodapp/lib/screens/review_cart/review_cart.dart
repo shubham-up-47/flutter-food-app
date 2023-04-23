@@ -21,7 +21,7 @@ class ReviewCart extends StatelessWidget {
     Widget continueButton = TextButton(
       child: Text("Yes"),
       onPressed: () {
-        // reviewCartProvider.reviewCartDataDelete(delete.cartId);
+        reviewCartProvider.reviewCartDataDelete(delete.cartId);
         Navigator.of(context).pop();
       },
     );
@@ -29,7 +29,7 @@ class ReviewCart extends StatelessWidget {
     // set up the AlertDialog
     AlertDialog alert = AlertDialog(
       title: Text("Cart Product"),
-      content: Text("Are you devete on cartProduct?"),
+      content: Text("Do you want to delete this cartProduct?"),
       actions: [
         cancelButton,
         continueButton,
@@ -51,7 +51,7 @@ class ReviewCart extends StatelessWidget {
     reviewCartProvider.getReviewCartData();
     return Scaffold(
       bottomNavigationBar: ListTile(
-        title: Text("Total Aount"),
+        title: Text("Total Amount"),
         subtitle: Text(
           "\$ ${reviewCartProvider.getTotalPrice()}",
           style: TextStyle(
@@ -106,9 +106,9 @@ class ReviewCart extends StatelessWidget {
                       productImage: data.cartImage,
                       productName: data.cartName,
                       productPrice: data.cartPrice,
-                      // productId: data.cartId,
+                      productId: data.cartId,
                       productQuantity: data.cartQuantity,
-                      productUnit: data.cartUnit,
+                      // productUnit: data.cartUnit,
                       onDelete: () {
                         showAlertDialog(context, data);
                       },

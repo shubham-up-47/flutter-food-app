@@ -11,14 +11,15 @@ class SingleItem extends StatefulWidget{
   String productName;
   bool wishList = false;
   int productPrice;
-  // String productId;
+  String productId;
   int productQuantity;
   Function() onDelete;
-  var productUnit;
+  // var productUnit;
+
   SingleItem({
     required this.productQuantity,
-    // required this.productId,
-    this.productUnit,
+    required this.productId,
+    // this.productUnit,
     required this.onDelete,
     required this.isBool,
     required this.productImage,
@@ -88,68 +89,68 @@ class _SingleItemState extends State<SingleItem>{
                           ),
                         ],
                       ),
-                      widget.isBool == false
-                          ? GestureDetector(
-                            onTap: (){
-                              showModalBottomSheet(
-                                context: context, 
-                                builder: (context) {
-                                  return Column(
-                                    mainAxisSize: MainAxisSize.min,
-                                    children: <Widget>[
-                                      ListTile(
-                                        title: new Text('50 Gram'),
-                                        onTap: (){
-                                          Navigator.pop(context);
-                                        },
-                                      ),
-                                      ListTile(
-                                        title: new Text('500 Gram'),
-                                        onTap: (){
-                                          Navigator.pop(context);
-                                        }, 
-                                      ),
-                                      ListTile(
-                                        title: new Text('1 Kg'),
-                                        onTap: (){
-                                          Navigator.pop(context);
-                                        },
-                                      )
-                                    ],
-                                  );
-                                }
-                              );
-                            },
-                            child: Container(
-                              margin: EdgeInsets.only(right: 15),
-                              padding: EdgeInsets.symmetric(horizontal: 10),
-                              height: 35,
-                              decoration: BoxDecoration(
-                                border: Border.all(color: Colors.grey),
-                                borderRadius: BorderRadius.circular(30)
-                              ),
-                              child: Row(
-                                children: [
-                                  Expanded(
-                                    child: Text(
-                                      "50 Gram",
-                                      style: TextStyle(
-                                        color: Colors.grey,
-                                        fontSize: 14
-                                      ),
-                                    )
-                                  ),
-                                  Center(
-                                    child: Icon(
-                                      Icons.arrow_drop_down,
-                                      size: 20,
-                                      color: primaryColor,
-                                    ),
-                                  )
-                                ],
-                              ),
-                            ),
-                          ): Text(widget.productUnit)
+                      // widget.isBool == false
+                      //     ? GestureDetector(
+                      //       onTap: (){
+                      //         showModalBottomSheet(
+                      //           context: context, 
+                      //           builder: (context) {
+                      //             return Column(
+                      //               mainAxisSize: MainAxisSize.min,
+                      //               children: <Widget>[
+                      //                 ListTile(
+                      //                   title: new Text('50 Gram'),
+                      //                   onTap: (){
+                      //                     Navigator.pop(context);
+                      //                   },
+                      //                 ),
+                      //                 ListTile(
+                      //                   title: new Text('500 Gram'),
+                      //                   onTap: (){
+                      //                     Navigator.pop(context);
+                      //                   }, 
+                      //                 ),
+                      //                 ListTile(
+                      //                   title: new Text('1 Kg'),
+                      //                   onTap: (){
+                      //                     Navigator.pop(context);
+                      //                   },
+                      //                 )
+                      //               ],
+                      //             );
+                      //           }
+                      //         );
+                      //       },
+                            // child: Container(
+                            //   margin: EdgeInsets.only(right: 15),
+                            //   padding: EdgeInsets.symmetric(horizontal: 10),
+                            //   height: 35,
+                            //   decoration: BoxDecoration(
+                            //     border: Border.all(color: Colors.grey),
+                            //     borderRadius: BorderRadius.circular(30)
+                            //   ),
+                              // child: Row(
+                              //   children: [
+                      //             Expanded(
+                      //               child: Text(
+                      //                 "50 Gram",
+                      //                 style: TextStyle(
+                      //                   color: Colors.grey,
+                      //                   fontSize: 14
+                      //                 ),
+                      //               )
+                      //             ),
+                      //             Center(
+                      //               child: Icon(
+                      //                 Icons.arrow_drop_down,
+                      //                 size: 20,
+                      //                 color: primaryColor,
+                      //               ),
+                      //             )
+                      //           ],
+                      //         ),
+                      //       ),
+                      //     ): Text(widget.productUnit)
                     ],
                   ),
                 )
@@ -162,7 +163,7 @@ class _SingleItemState extends State<SingleItem>{
                       : EdgeInsets.only(left: 15, right: 15),
                   child: widget.isBool == false
                       ? Count(
-                        // productId: widget.productId,
+                        productId: widget.productId,
                         productImage: widget.productImage,
                         productName: widget.productName,
                         productPrice: widget.productPrice,
@@ -201,7 +202,7 @@ class _SingleItemState extends State<SingleItem>{
                                               });
                                               reviewCartProvider.updateReviewCartData(
                                                 cartImage: widget.productImage,
-                                                // cartId: widget.productId,
+                                                cartId: widget.productId,
                                                 cartName: widget.productName,
                                                 cartPrice: widget.productPrice,
                                                 cartQuantity: count
@@ -226,7 +227,7 @@ class _SingleItemState extends State<SingleItem>{
                                               });
                                               reviewCartProvider.updateReviewCartData(
                                                 cartImage: widget.productImage,
-                                                // cartId: widget.productId,
+                                                cartId: widget.productId,
                                                 cartName: widget.productName,
                                                 cartPrice: widget.productPrice,
                                                 cartQuantity: count

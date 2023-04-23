@@ -9,14 +9,14 @@ import 'package:provider/provider.dart';
 class Count extends StatefulWidget{
   String productName;
   String productImage;
-  // String productId;
+  String productId;
   int productPrice;
-  var productUnit;
+  // var productUnit;
 
   Count({
     required this.productName,
-    this.productUnit,
-    // required this.productId,
+    // this.productUnit,
+    required this.productId,
     required this.productImage,
     required this.productPrice
   });
@@ -65,13 +65,13 @@ class _CountState extends State<Count>{
                     setState(() {
                       isTrue = false;
                     });
-                    // reviewCartProvider.reviewCartDataDelete(widget.productId);
+                    reviewCartProvider.reviewCartDataDelete(widget.productId);
                   }else if(count > 1){
                     setState(() {
                       count--;
                     });
                     reviewCartProvider.updateReviewCartData(
-                      // cartId: widget.productId,
+                      cartId: widget.productId,
                       cartImage: widget.productImage,
                       cartName: widget.productName,
                       cartPrice: widget.productPrice,
@@ -98,7 +98,7 @@ class _CountState extends State<Count>{
                     count++;
                   });
                   reviewCartProvider.updateReviewCartData(
-                    // cartId: widget.productId,
+                    cartId: widget.productId,
                     cartImage: widget.productImage,
                     cartName: widget.productName,
                     cartPrice: widget.productPrice,
@@ -119,12 +119,12 @@ class _CountState extends State<Count>{
                   isTrue = true;
                 });
                 reviewCartProvider.addReviewCartData(
-                  // cartId: widget.productId,
+                  cartId: widget.productId,
                   cartImage: widget.productImage,
                   cartName: widget.productName,
                   cartPrice: widget.productPrice,
                   cartQuantity: count,
-                  cartUnit: widget.productUnit
+                  // cartUnit: widget.productUnit
                 );
               },
               child: Text(
