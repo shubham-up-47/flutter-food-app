@@ -1,4 +1,3 @@
-import 'package:foodapp/models/review_cart_model.dart';
 import 'package:flutter/material.dart';
 import 'package:foodapp/config/colors.dart';
 import 'package:foodapp/providers/product_provider.dart';
@@ -9,7 +8,6 @@ import 'package:foodapp/screens/product_overview/product_overview.dart';
 import 'package:foodapp/screens/review_cart/review_cart.dart';
 import 'package:foodapp/screens/search/search.dart';
 import 'package:provider/provider.dart';
-import 'dart:developer';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -67,7 +65,7 @@ class _HomeScreenState extends State<HomeScreen>{
                     );
                   },
                   productId: herbsProductData.productId,
-                  // productUnit: herbsProductData,
+                  productUnit: herbsProductData,
                   productPrice: herbsProductData.productPrice,
                   productImage: herbsProductData.productImage,
                   productName: herbsProductData.productName,
@@ -126,7 +124,7 @@ class _HomeScreenState extends State<HomeScreen>{
                     );
                   },
                   productId: freshProductData.productId,
-                  // productUnit: freshProductData,
+                  productUnit: freshProductData,
                   productImage: freshProductData.productImage,
                   productName: freshProductData.productName,
                   productPrice: freshProductData.productPrice,
@@ -186,7 +184,7 @@ class _HomeScreenState extends State<HomeScreen>{
                     );
                   },
                   productId: rootProductData.productId,
-                  // productUnit: rootProductData,
+                  productUnit: rootProductData,
                   productImage: rootProductData.productImage,
                   productName: rootProductData.productName,
                   productPrice: rootProductData.productPrice,

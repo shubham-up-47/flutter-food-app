@@ -1,11 +1,10 @@
-import 'package:foodapp/models/review_cart_model.dart'; 
 import 'package:foodapp/config/colors.dart';
 import 'package:foodapp/providers/user_provider.dart';
 import 'package:foodapp/screens/home/home_screen.dart';
 import 'package:foodapp/screens/my_profile/my_profile.dart';
 import 'package:foodapp/screens/review_cart/review_cart.dart';
-// import 'package:app/screens/wishList/wish_list.dart';
-import 'package:flutter/material.dart'; 
+import 'package:flutter/material.dart';
+import 'package:foodapp/screens/wishlist/wish_list.dart'; 
 
 class DrawerSide extends StatefulWidget{
   UserProvider userProvider;
@@ -116,7 +115,7 @@ class _DrawerSideState extends State<DrawerSide>{
               onTap: (){
                 Navigator.of(context).push(
                   MaterialPageRoute(
-                    builder: (context) => HomeScreen(),
+                    builder: (context) => WishLsit(),
                   ),
                 );
               } 

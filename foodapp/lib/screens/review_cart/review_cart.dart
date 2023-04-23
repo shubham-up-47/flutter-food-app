@@ -10,6 +10,7 @@ import 'package:provider/provider.dart';
 
 class ReviewCart extends StatelessWidget {
   late ReviewCartProvider reviewCartProvider;
+
   showAlertDialog(BuildContext context, ReviewCartModel delete) {
     // set up the buttons
     Widget cancelButton = TextButton(
@@ -108,7 +109,7 @@ class ReviewCart extends StatelessWidget {
                       productPrice: data.cartPrice,
                       productId: data.cartId,
                       productQuantity: data.cartQuantity,
-                      // productUnit: data.cartUnit,
+                      productUnit: data.cartUnit,
                       onDelete: () {
                         showAlertDialog(context, data);
                       },

@@ -10,12 +10,12 @@ class SingalProduct extends StatefulWidget{
   final int productPrice;
   final Function() onTap;
   final String productId;
-  // final ProductModel productUnit;
+  final ProductModel productUnit;
 
   SingalProduct(
     {
       required this.productId,
-      // required this.productUnit,
+      required this.productUnit,
       required this.productImage,
       required this.productName,
       required this.onTap,
@@ -33,12 +33,12 @@ class _SingalProductState extends State<SingalProduct>{
   
   @override 
   Widget build(BuildContext context){
-    // widget.productUnit.productUnit.firstWhere((element) {
-    //   setState(() {
-    //     firstValue = element;
-    //   });
-    //   return true;
-    // });
+    widget.productUnit.productUnit.firstWhere((element) {
+      setState(() {
+        firstValue = element;
+      });
+      return true;
+    });
     return SingleChildScrollView(
       scrollDirection: Axis.horizontal,
       child: Row(
@@ -88,53 +88,53 @@ class _SingalProductState extends State<SingalProduct>{
                         SizedBox(height: 5),
                         Row(
                           children: [
-                            // Expanded(
-                            //   child: ProductUnit(
-                            //     onTap: (){
-                            //       showModalBottomSheet(
-                            //         context: context, 
-                            //         builder: (context){
-                            //           return Column(
-                            //             mainAxisSize: MainAxisSize.min,
-                            //             crossAxisAlignment: CrossAxisAlignment.start,
-                            //             children: widget.productUnit.productUnit.map<Widget>((data) {
-                            //               return Column(
-                            //                 children: [
-                            //                   Padding(
-                            //                     padding: const EdgeInsets.symmetric(vertical:10, horizontal:10),
-                            //                     child: InkWell(
-                            //                       onTap: () async{
-                            //                         setState(() {
-                            //                           unitData = data;
-                            //                         });
-                            //                         Navigator.of(context).pop(); 
-                            //                       },
-                            //                       child: Text(
-                            //                         data,
-                            //                         style: TextStyle(
-                            //                           color: primaryColor,
-                            //                           fontSize: 18
-                            //                         ),
-                            //                       ),
-                            //                     ),
-                            //                   ),
-                            //                 ],
-                            //               );
-                            //             }).toList(),
-                            //           );
-                            //         }
-                            //       );
-                            //     },
-                            //     title: unitData == null ? firstValue:unitData,
-                            //   ),
-                            // ),
+                            Expanded(
+                              child: ProductUnit(
+                                onTap: (){
+                                  showModalBottomSheet(
+                                    context: context, 
+                                    builder: (context){
+                                      return Column(
+                                        mainAxisSize: MainAxisSize.min,
+                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                        children: widget.productUnit.productUnit.map<Widget>((data) {
+                                          return Column(
+                                            children: [
+                                              Padding(
+                                                padding: const EdgeInsets.symmetric(vertical:10, horizontal:10),
+                                                child: InkWell(
+                                                  onTap: () async{
+                                                    setState(() {
+                                                      unitData = data;
+                                                    });
+                                                    Navigator.of(context).pop(); 
+                                                  },
+                                                  child: Text(
+                                                    data,
+                                                    style: TextStyle(
+                                                      color: primaryColor,
+                                                      fontSize: 18
+                                                    ),
+                                                  ),
+                                                ),
+                                              ),
+                                            ],
+                                          );
+                                        }).toList(),
+                                      );
+                                    }
+                                  );
+                                },
+                                title: unitData == null ? firstValue:unitData,
+                              ),
+                            ),
                             SizedBox(width: 5),
                             Count(
                               productId: widget.productId,
                               productImage: widget.productImage,
                               productName: widget.productName,
                               productPrice: widget.productPrice,
-                              // productUnit: unitData == null ? firstValue:unitData,
+                              productUnit: unitData == null ? firstValue:unitData,
                             ),
                           ],
                         ),

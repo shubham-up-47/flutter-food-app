@@ -11,11 +11,11 @@ class Count extends StatefulWidget{
   String productImage;
   String productId;
   int productPrice;
-  // var productUnit;
+  var productUnit;
 
   Count({
     required this.productName,
-    // this.productUnit,
+    this.productUnit,
     required this.productId,
     required this.productImage,
     required this.productPrice
@@ -30,16 +30,16 @@ class _CountState extends State<Count>{
   bool isTrue = false;
 
   getAddAndQuantity(){
-    // FirebaseFirestore.instance.collection("ReviewCart").doc(FirebaseAuth.instance.currentUser?.uid).collection("YourReviewCart").doc(widget.productId).get().then((value) => {
-    //   if(this.mounted){
-    //     if(value.exists){
-    //       setState(() {
-    //         count = value.get("cartQuantity");
-    //         isTrue = value.get("isAdd");
-    //       })
-    //     }
-    //   }
-    // });
+    FirebaseFirestore.instance.collection("ReviewCart").doc(FirebaseAuth.instance.currentUser?.uid).collection("YourReviewCart").doc(widget.productId).get().then((value) => {
+      if(this.mounted){
+        if(value.exists){
+          setState(() {
+            count = value.get("cartQuantity");
+            isTrue = value.get("isAdd");
+          })
+        }
+      }
+    });
   }
 
   @override 
@@ -90,7 +90,7 @@ class _CountState extends State<Count>{
                 style: TextStyle(
                   color: Color(0xffd0b84c),
                   fontWeight: FontWeight.bold,
-                ), 
+                ),
               ),
               InkWell(
                 onTap: (){
@@ -124,7 +124,7 @@ class _CountState extends State<Count>{
                   cartName: widget.productName,
                   cartPrice: widget.productPrice,
                   cartQuantity: count,
-                  // cartUnit: widget.productUnit
+                  cartUnit: widget.productUnit
                 );
               },
               child: Text(

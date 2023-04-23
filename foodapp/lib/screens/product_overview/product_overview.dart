@@ -1,4 +1,3 @@
-// ignore_for_file: use_key_in_widget_constructors
 
 import 'dart:ui';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -7,8 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:foodapp/config/colors.dart';
 import 'package:foodapp/screens/review_cart/review_cart.dart';
 import 'package:foodapp/models/review_cart_model.dart';
-// import 'package:foodapp/providers/wishlist_provider.dart';
-import 'package:foodapp/screens/review_cart/review_cart.dart';
+import 'package:foodapp/providers/wishlist_provider.dart';
 import 'package:foodapp/widgets/count.dart';
 import 'package:provider/provider.dart';
 
@@ -84,8 +82,8 @@ class _ProductOverviewState extends State<ProductOverview>{
   
   @override 
   Widget build(BuildContext context) {
-    // WishListProvider wishListProvider = Provider.of(context);
-    // getWishListBool();
+    WishListProvider wishListProvider = Provider.of(context);
+    getWishListBool();
 
     return Scaffold(
       bottomNavigationBar: Row(
@@ -103,15 +101,15 @@ class _ProductOverviewState extends State<ProductOverview>{
                 wishListBool = !wishListBool;
               });
               if(wishListBool == true){
-                // wishListProvider.addWishListData(
-                //   wishListId: widget.productId,
-                //   wishListImage: widget.productImage,
-                //   wishListName: widget.productName,
-                //   wishListPrice: widget.productPrice,
-                //   wishListQuantity: 2
-                // );
+                wishListProvider.addWishListData(
+                  wishListId: widget.productId,
+                  wishListImage: widget.productImage,
+                  wishListName: widget.productName,
+                  wishListPrice: widget.productPrice,
+                  wishListQuantity: 2
+                );
               }else{
-                // wishListProvider.deleteWishList(widget.productId);
+                wishListProvider.deleteWishtList(widget.productId);
               }
             }
           ),
@@ -202,32 +200,9 @@ class _ProductOverviewState extends State<ProductOverview>{
                           productImage: widget.productImage,
                           productName: widget.productName,
                           productPrice: widget.productPrice,
-                          // productUnit: '500 Gram',
+                          productUnit: '500 Gram',
                         ),
-                       
-                        // Container(
-                        //   padding: EdgeInsets.symmetric(horizontal: 30, vertical: 10),
-                        //   decoration: BoxDecoration(
-                        //     border: Border.all(color: Colors.grey),
-                        //     borderRadius: BorderRadius.circular(
-                        //       30,
-                        //     ),
-                        //   ),
-                        //   child: Row(
-                        //     mainAxisAlignment: MainAxisAlignment.center,
-                        //     children: [
-                        //       Icon(
-                        //         Icons.add,
-                        //         size: 17,
-                        //         color: primaryColor,
-                        //       ),
-                        //       Text(
-                        //         "ADD",
-                        //         style: TextStyle(color: primaryColor),
-                        //       ), 
-                        //     ],
-                        //   ),
-                        // ),
+                        
                       ],
                     ),
                   ),

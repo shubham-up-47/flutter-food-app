@@ -5,6 +5,7 @@ import 'package:foodapp/config/colors.dart';
 import 'package:foodapp/providers/product_provider.dart';
 import 'package:foodapp/providers/review_cart_provider.dart';
 import 'package:foodapp/providers/user_provider.dart';
+import 'package:foodapp/providers/wishlist_provider.dart';
 import 'package:foodapp/screens/home/home_screen.dart';
 import 'package:provider/provider.dart';
 import 'auth/sign_in.dart';
@@ -25,6 +26,7 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider<ProductProvider>(create: (context) => ProductProvider()),
         ChangeNotifierProvider<UserProvider>(create: (context) => UserProvider()),
         ChangeNotifierProvider<ReviewCartProvider>(create: (context) => ReviewCartProvider()),
+        ChangeNotifierProvider<WishListProvider>(create: (context) => WishListProvider()),
       ],
 
       child: MaterialApp(

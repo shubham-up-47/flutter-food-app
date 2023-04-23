@@ -3,7 +3,10 @@ import 'package:flutter/material.dart';
 class ProductUnit extends StatelessWidget {
   final Function() onTap;
   final String title;
-  ProductUnit({required this.onTap, required this.title});
+  ProductUnit({
+    required this.onTap, 
+    required this.title
+  });
   @override
   Widget build(BuildContext context) {
     return InkWell(

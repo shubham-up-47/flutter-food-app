@@ -10,7 +10,7 @@ class ReviewCartProvider with ChangeNotifier{
     required String cartImage,
     required int cartPrice,
     required int cartQuantity,
-    // var cartUnit
+    var cartUnit
   }) async{
     FirebaseFirestore.instance.collection("ReviewCart").doc(FirebaseAuth.instance.currentUser?.uid).collection("YourReviewCart").doc(cartId).set({
       "cartId": cartId,
@@ -18,7 +18,7 @@ class ReviewCartProvider with ChangeNotifier{
       "cartImage": cartImage,
       "cartPrice": cartPrice,
       "cartQuantity": cartQuantity,
-      // "cartUnit": cartUnit,
+      "cartUnit": cartUnit,
       "idAdd": true
     });
   }
@@ -52,7 +52,7 @@ class ReviewCartProvider with ChangeNotifier{
         cartName: element.get("cartName"),
         cartPrice: element.get("cartPrice"),
         cartQuantity: element.get("cartQuantity"),
-        // cartUnit: element.get("cartUnit")
+        cartUnit: element.get("cartUnit")
       );
       newList.add(reviewCartModel);
     });
