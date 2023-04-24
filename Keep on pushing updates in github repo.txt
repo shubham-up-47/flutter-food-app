@@ -1,0 +1,186 @@
+collections
+
+
+
+
+[FreshProduct]
+
+productId
+"78M1Mzqck89dZ2vSFoAA"
+(string)
+productImage
+"https://e7.pngegg.com/pngimages/389/21/png-clipart-sliced-of-watermelon-seedless-fruit-sun-melon-juice-watermelon-natural-foods-food.png"
+productName
+"Watermelon"
+productPrice
+21
+productUnit
+0
+"50 Gram"
+1
+"500 Gram"
+2
+"1 Kg"
+
+
+productId
+"mMrlGN7HNrhbiG6pQRmn"
+(string)
+productImage
+"https://freepngimg.com/thumb/berries/28785-6-berries-transparent-picture.png"
+productName
+"Berries"
+productPrice
+23
+productUnit
+0
+"50 Gram"
+1
+"500 Gram"
+2
+"5 Pc"
+
+
+productId
+"p9SVoGKz0OfwoptOOzKU"
+(string)
+productImage
+"https://pngimg.com/uploads/grape/grape_PNG2976.png"
+productName
+"Green Grapes"
+productPrice
+15
+productUnit
+0
+"1 Pc"
+1
+"500 Gram"
+2
+"1 Kg"
+
+
+
+
+
+[herbs product]
+
+
+productId
+"FPduPHXaSZQWXPhnEUb5"
+(string)
+productImage
+"https://purepng.com/public/uploads/large/purepng.com-pepermintpeperminthybrid-mintperennial-plantmint-14115270742872fda0.png"
+productName
+"Fresh Basil"
+productPrice
+45
+productUnit
+0
+"50 Gram"
+1
+"500 Gram"
+2
+"1 Kg"
+
+productId
+"QBxsOuoWSzEPmWDeWord"
+(string)
+productImage
+"https://w7.pngwing.com/pngs/291/770/png-transparent-peppermint-leaves-juice-peppermint-flavor-menthol-menthol-food-leaf-oil.png"
+productName
+"Fresh Mint"
+productPrice
+50
+productUnit
+0
+"50 Gram"
+1
+"500 Gram"
+2
+"1 Kg"
+
+
+productId
+"VecNt9FquS1MDpMMntZ4"
+(string)
+productImage
+"https://www.pngarts.com/files/5/Rosemary-PNG-Transparent-Image.png"
+productName
+"Rose Merry"
+productPrice
+65
+productUnit
+0
+"50 Gram"
+1
+"500 Gram"
+2
+"1 Kg"
+
+
+
+
+
+
+[root product] 
+
+productId
+"0O272UNg62kfiSB6WTKI"
+(string)
+productImage
+"https://www.fondation-louisbonduelle.org/wp-content/uploads/2016/09/fenouil_262755635-e1475226317736.png"
+productName
+"Fennel"
+productPrice
+41
+productUnit
+0
+"50 Gram"
+1
+"500 Gram"
+2
+"1 Kg"
+
+
+productId
+"aPfpQx5ECsnvQCTjydDj"
+(string)
+productImage
+"https://pngimg.com/uploads/basil/basil_PNG26.png"
+productName
+"Fresh Basil"
+productPrice
+11
+productUnit
+0
+"50 Gram"
+1
+"500 Gram"
+2
+"1 Kg"
+
+
+productId
+"dNMJH1krlakRjtjg3l0I"
+(string)
+productImage
+"https://pngimg.com/uploads/spinach/spinach_PNG33.png"
+productName
+"Green Garlic"
+productPrice
+97
+productUnit
+0
+"50 Gram"
+1
+"500 Gram"
+2
+"1 Kg"
+
+
+
+
+
+
+
+

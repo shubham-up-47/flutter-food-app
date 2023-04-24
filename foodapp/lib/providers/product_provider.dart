@@ -5,7 +5,7 @@ import 'package:foodapp/models/product_model.dart';
 class ProductProvider with ChangeNotifier {
   late ProductModel productModel;
 
-  List<ProductModel> search = [];
+  var search = <ProductModel>{};
   productModels(QueryDocumentSnapshot element){
     productModel = ProductModel(
       productImage: element.get("productImage"),
@@ -72,7 +72,13 @@ class ProductProvider with ChangeNotifier {
 
 ///////////// Search Return ////////////////
   List<ProductModel> get gerAllProductSearch{
-    return search;
+    List<ProductModel> allElements = [];
+
+    search.forEach((element) {
+      allElements.add(element); 
+    });
+
+    return allElements;
   }
 }
 
