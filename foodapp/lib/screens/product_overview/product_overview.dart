@@ -106,7 +106,7 @@ class _ProductOverviewState extends State<ProductOverview>{
                   wishListImage: widget.productImage,
                   wishListName: widget.productName,
                   wishListPrice: widget.productPrice,
-                  wishListQuantity: 2
+                  wishListQuantity: 1
                 );
               }else{
                 wishListProvider.deleteWishtList(widget.productId);

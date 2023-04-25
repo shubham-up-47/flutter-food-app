@@ -134,7 +134,7 @@ class _DrawerSideState extends State<DrawerSide>{
                     children: [
                       Text("Call us:"),
                       SizedBox(width: 10),
-                      Text("+923352580282"),
+                      Text("+918604815500"),
                     ],
                   ),
                   SizedBox(height: 5),
@@ -145,7 +145,7 @@ class _DrawerSideState extends State<DrawerSide>{
                         Text("Mail us:"),
                         SizedBox(width: 10),
                         Text(
-                          "assarbaloch5@gmail.com",
+                          "shubham271306@gmail.com",
                           overflow: TextOverflow.ellipsis,
                         ),
                       ],

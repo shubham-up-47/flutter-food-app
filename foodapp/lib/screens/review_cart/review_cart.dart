@@ -4,8 +4,7 @@ import 'package:foodapp/config/colors.dart';
 import 'package:foodapp/widgets/single_item.dart';
 import 'package:foodapp/models/review_cart_model.dart';
 import 'package:foodapp/providers/review_cart_provider.dart';
-// import 'package:foodapp/screens/check_out/delivery_details/delivery_details.dart';
-import 'package:foodapp/widgets/single_item.dart';
+import 'package:foodapp/screens/check_out/delivery_details/delivery_details.dart';
 import 'package:provider/provider.dart';
 
 class ReviewCart extends StatelessWidget {
@@ -73,11 +72,11 @@ class ReviewCart extends StatelessWidget {
               if(reviewCartProvider.getReviewCartDataList.isEmpty){
                 Fluttertoast.showToast(msg: "No Cart Data Found");
               }
-              // Navigator.of(context).push(
-              //   MaterialPageRoute(
-              //     builder: (context) => DeliveryDetails(),
-              //   ),
-              // );
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) => DeliveryDetails(),
+                ),
+              );
             },
           ),
         ),

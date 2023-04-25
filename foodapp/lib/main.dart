@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:foodapp/config/colors.dart';
+import 'package:foodapp/providers/check_out_provider.dart';
 import 'package:foodapp/providers/product_provider.dart';
 import 'package:foodapp/providers/review_cart_provider.dart';
 import 'package:foodapp/providers/user_provider.dart';
@@ -27,6 +28,7 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider<UserProvider>(create: (context) => UserProvider()),
         ChangeNotifierProvider<ReviewCartProvider>(create: (context) => ReviewCartProvider()),
         ChangeNotifierProvider<WishListProvider>(create: (context) => WishListProvider()),
+        ChangeNotifierProvider<CheckoutProvider>(create: (context) => CheckoutProvider()),
       ],
 
       child: MaterialApp(

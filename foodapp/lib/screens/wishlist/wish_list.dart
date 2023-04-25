@@ -67,6 +67,7 @@ class _WishLsitState extends State<WishLsit>{
             children: [
               const SizedBox(height: 10),
               SingleItem( 
+                isBool: true,
                 productImage: data.productImage,
                 productName: data.productName,
                 productPrice: data.productPrice,
@@ -77,7 +78,6 @@ class _WishLsitState extends State<WishLsit>{
                 onDelete: (){
                   showAlertDialog(context, data);
                 }, 
-                isBool: true,
               ),
             ],
           );
